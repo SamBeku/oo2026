@@ -4,7 +4,6 @@ import com.samuel.veebipood.entity.Product;
 import com.samuel.veebipood.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @RestController
@@ -32,6 +31,11 @@ public class ProductController {
 
     @PostMapping("products")
     public List<Product> addProduct(@RequestBody Product product){
+        productRepository.save(product);
+        return productRepository.findAll();
+    }
+    @PutMapping("products")
+    public List<Product> editProduct(@RequestBody Product product) {
         productRepository.save(product);
         return productRepository.findAll();
     }

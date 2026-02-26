@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-@Getter
+
+public class Category {@Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
@@ -16,18 +17,11 @@ public class Product {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    private String name;
-    private String description;
-    private Double price;
-    private Boolean active;
-    private int stock;
-    //Andmebaasi, aga ei määra seda väärtust
-    //double -> 0
-    //boolean -> False
-    //int-> 0
+    private String firstName;
+    private String lastName;
+    @Column(unique = true);
+    private String email;
+    private String password;
 
-    //Andmebaasi, aga ei määra seda väärtust
-    //Double -> null
-    //Boolean -> null
-    //Integer-> null
+
 }
