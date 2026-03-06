@@ -27,7 +27,7 @@ public class MovieController {
     }
 
     //filmide uleslaadimine andmebaasi
-    @PostMapping("film")
+    @PostMapping("addfilm")
     public List<Film> addMovie(@RequestBody Film movie) {
         MovieRepository.save(movie); //siin salvestab
         return MovieRepository.findAll(); //tagastab koik filmid andmebaasis
