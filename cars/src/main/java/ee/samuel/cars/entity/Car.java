@@ -1,5 +1,4 @@
-package ee.samuel.desipher.entity;
-
+package ee.samuel.cars.entity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,13 +10,16 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "cypher")
-public class Cypher {
+@Table(name = "cars")
+public class Car {
     @Id
     @GeneratedValue
     @Column(name = "id")
     private Long id;
-    private String word;
-
-
+    private String brand;
+    private String model;
+    private Long year;
+    private String color;
+    private Long price;
 }
+

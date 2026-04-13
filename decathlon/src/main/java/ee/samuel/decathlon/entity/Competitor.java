@@ -1,4 +1,4 @@
-package ee.samuel.desipher.entity;
+package ee.samuel.decathlon.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -11,13 +11,12 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "cypher")
-public class Cypher {
+@Table(name = "decathlon")
+public class Competitor {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-    private String word;
-
-
+    private String name;
+    private Long score;
 }
