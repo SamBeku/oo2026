@@ -11,6 +11,8 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "product")
+
+
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +23,8 @@ public class Product {
     private Double price;
     private Boolean active;
     private int stock;
+    @ManyToOne
+    private Category category;
     //Andmebaasi, aga ei määra seda väärtust
     //double -> 0
     //boolean -> False
